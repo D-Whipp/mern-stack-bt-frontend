@@ -11,10 +11,12 @@ import {
   GET_REPOS,
 } from './types';
 
+const url = 'https://bt-mern-behind.adaptable.app/';
+
 // Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get('/api/profile/me');
+    const res = await axios.get(url + '/api/profile/me');
 
     dispatch({
       type: GET_PROFILE,
@@ -37,7 +39,7 @@ export const getCurrentProfile = () => async (dispatch) => {
 export const getProfiles = () => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
   try {
-    const res = await axios.get('/api/profile');
+    const res = await axios.get(url + '/api/profile');
 
     dispatch({
       type: GET_PROFILES,
@@ -57,7 +59,7 @@ export const getProfiles = () => async (dispatch) => {
 // Get profile by ID
 export const getProfileById = (userId) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/profile/user/${userId}`);
+    const res = await axios.get(url + `/api/profile/user/${userId}`);
 
     dispatch({
       type: GET_PROFILE,
@@ -78,7 +80,9 @@ export const getProfileById = (userId) => async (dispatch) => {
 // Get all profiles
 export const getGithubRepos = (username) => async (dispatch) => {
   try {
-    const res = await axios.get(`/api/profile/github/${username}`);
+    const res = await axios.get(
+      url + `/api/profile/github/${username}`
+    );
 
     dispatch({
       type: GET_REPOS,
@@ -106,7 +110,11 @@ export const createProfile =
         },
       };
 
-      const res = await axios.post('/api/profile', formData, config);
+      const res = await axios.post(
+        url + '/api/profile',
+        formData,
+        config
+      );
 
       dispatch({
         type: GET_PROFILE,
@@ -153,7 +161,7 @@ export const addExperience =
       };
 
       const res = await axios.put(
-        '/api/profile/experience',
+        url + '/api/profile/experience',
         formData,
         config
       );
@@ -195,7 +203,7 @@ export const addEducation =
       };
 
       const res = await axios.put(
-        '/api/profile/education',
+        url + '/api/profile/education',
         formData,
         config
       );
@@ -229,7 +237,9 @@ export const addEducation =
 // Delete experience
 export const deleteExperience = (id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`/api/profile/experience/${id}`);
+    const res = await axios.delete(
+      url + `/api/profile/experience/${id}`
+    );
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -251,7 +261,9 @@ export const deleteExperience = (id) => async (dispatch) => {
 // Delete education
 export const deleteEducation = (id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`/api/profile/education/${id}`);
+    const res = await axios.delete(
+      url + `/api/profile/education/${id}`
+    );
 
     dispatch({
       type: UPDATE_PROFILE,
