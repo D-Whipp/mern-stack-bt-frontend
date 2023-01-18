@@ -11,7 +11,7 @@ import {
   REMOVE_COMMENT,
 } from './types';
 
-const url = 'https://bt-mern-behind.adaptable.app/';
+const url = 'https://bt-mern-behind.adaptable.app';
 
 // Get posts
 export const getPosts = () => async (dispatch) => {

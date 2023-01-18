@@ -11,7 +11,7 @@ import {
   GET_REPOS,
 } from './types';
 
-const url = 'https://bt-mern-behind.adaptable.app/';
+const url = 'https://bt-mern-behind.adaptable.app';
 
 // Get current users profile
 export const getCurrentProfile = () => async (dispatch) => {

@@ -13,7 +13,7 @@ import {
 import setAuthToken from '../utils/setAuthToken';
 
 // url is for deployment site
-const url = 'https://bt-mern-behind.adaptable.app/';
+const url = 'https://bt-mern-behind.adaptable.app';
 
 // Load User
 export const loadUser = () => async (dispatch) => {
