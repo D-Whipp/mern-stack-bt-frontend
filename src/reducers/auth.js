@@ -19,7 +19,6 @@ const initialState = {
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
-  console.log('auth.js is preparing for token');
 
   switch (type) {
     case USER_LOADED:
@@ -31,10 +30,10 @@ export default function (state = initialState, action) {
       };
     case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
+      console.log('auth.js is preparing for token');
       // original setItem placement
-      // localStorage.setItem('token', payload.token);
+      localStorage.setItem('token', payload.token);
       return {
-        localStorage.setItem('token', payload.token);
         ...state,
         ...payload,
         isAuthenticated: true,
