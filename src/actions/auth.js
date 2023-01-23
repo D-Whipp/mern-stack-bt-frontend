@@ -47,10 +47,10 @@ export const register =
       },
     };
 
+    console.log('Register User is listening');
     const body = JSON.stringify({ name, email, password });
 
     try {
-      console.log('Register User is listening');
       const res = await axios.post(url + '/api/users', body, config);
       // const res = await axios.post('/api/users', body, config);
 
