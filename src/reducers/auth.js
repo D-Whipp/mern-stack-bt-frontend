@@ -19,6 +19,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
   const { type, payload } = action;
+  console.log('auth.js is preparing for token');
 
   switch (type) {
     case USER_LOADED:
