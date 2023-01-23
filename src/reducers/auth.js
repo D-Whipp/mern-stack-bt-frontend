@@ -31,8 +31,10 @@ export default function (state = initialState, action) {
       };
     case LOGIN_SUCCESS:
     case REGISTER_SUCCESS:
-      localStorage.setItem('token', payload.token);
+      // original setItem placement
+      // localStorage.setItem('token', payload.token);
       return {
+        localStorage.setItem('token', payload.token);
         ...state,
         ...payload,
         isAuthenticated: true,
