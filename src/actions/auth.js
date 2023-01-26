@@ -93,8 +93,10 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+    console.log('dispatched LOGIN_SUCCESS');
 
     dispatch(loadUser());
+    console.log('DISPATCHED LOADUSER');
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -103,10 +105,11 @@ export const login = (email, password) => async (dispatch) => {
         dispatch(setAlert(error.msg, 'danger'))
       );
     }
-
+    console.log('ERRORS: ', errors);
     dispatch({
       type: LOGIN_FAIL,
     });
+    console.log('dispatched LOGIN_FAIL');
   }
 };
 
