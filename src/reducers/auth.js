@@ -30,7 +30,6 @@ export default function (state = initialState, action) {
       };
     case LOGIN_SUCCESS:
       console.log('auth.js is preparing for token');
-      // original setItem placement
       localStorage.setItem('token', payload.token);
       return {
         ...state,
